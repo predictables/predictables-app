@@ -2,8 +2,9 @@ from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from pydantic import BaseModel
 
+
+from api.models import User, Session, Transaction
 from api.hasher import Hasher
 
 fake_users_db = {
@@ -25,8 +26,6 @@ fake_users_db = {
 
 
 app = FastAPI()
-
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 

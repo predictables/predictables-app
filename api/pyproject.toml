@@ -8,12 +8,13 @@ authors = [
 dependencies = [
     "fastapi>=0.111.0",
     "bokeh>=3.4.1",
-    "pandas>=2.2.2",
-    "polars>=0.20.31",
-    "duckdb>=1.0.0",
+    "pandas>=2.2.1",
+    "polars>=0.20.23",
+    "duckdb>=0.10.1,<0.11.0",
     "uv>=0.2.8",
     "passlib>=1.7.4",
     "predictables @ git+http://github.com/predictables/predictables",
+    "sqlmodel>=0.0.19",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
