@@ -4,7 +4,7 @@ FROM python:3.11-slim as builder
 WORKDIR /api
 
 # Copy the current directory contents into the container at /api
-COPY . /api
+COPY ./api /api
 
 # Install sudo and curl
 RUN apt-get update && apt-get install -y sudo curl bash zsh git && apt-get clean && rm -rf /var/lib/apt/lists/*
