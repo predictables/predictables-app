@@ -10,7 +10,7 @@ env:
   TAG_STEM: predictables-api
   TEST_TAG: test
   LATEST_TAG: latest
-  DOCKERFILE_FOLDER: ./api
+  DOCKERFILE_FOLDER: ./api/docker
   MAJOR_VERSION: 1
   DSLIM_HTTP_PROBE: false
   DOCKERHUB_REPO_OWNER: aaweaver9
