@@ -60,19 +60,17 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           tags: ${{ env.LATEST_TAG }}, v${{ env.MAJOR_VERSION }}.${{ github.run_number }}
 
-      # Slim the full-size image
-      - name: Slim the full-size images
-        uses: kitabisa/docker-slim-action@v1
-        with:
-          target: ${{ env.DOCKERHUB_REPO_OWNER }}/${{ env.TAG_STEM }}
-          tag: 'slim'
-
       # Delete the test image
       - name: Delete the test image
         run: |
           docker image rm ${{ env.DOCKERHUB_REPO_OWNER }}/${{ env.TAG_STEM }}:${{ env.TEST_TAG }}
 
-      # Push only the slim image to Docker Hub
-      - name: Push slim and full-size images to Docker Hub
+      # Delete the slim image
+      - name: Delete the slim image
+        run: |
+          docker image rm ${{ env.DOCKERHUB_REPO_OWNER }}/${{ env.TAG_STEM }}:slim
+
+      # Push full-size images to Docker Hub
+      - name: Push full-size images to Docker Hub
         run: |
           docker image push ${{ env.DOCKERHUB_REPO_OWNER }}/${{ env.TAG_STEM }} --all-tags

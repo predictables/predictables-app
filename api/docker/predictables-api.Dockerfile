@@ -9,10 +9,6 @@ COPY ./api /api
 # Install sudo and curl
 RUN apt-get update && apt-get install -y sudo curl bash zsh git && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN ls -lah / 
-RUN ls -lah /api 
-RUN pwd -P
-
 # Install install_dotfiles script:
 RUN mv /api/install_dotfiles /usr/bin/install_dotfiles && chmod +x /usr/bin/install_dotfiles
 
