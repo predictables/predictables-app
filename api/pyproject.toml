@@ -1,13 +1,22 @@
 [project]
-name = "predictables-flask"
+name = "api"
 version = "0.1.0"
-description = "Add your description here"
+description = "API for my predictables app."
 authors = [
     { name = "Andy Weaver", email = "andrewayersweaver+github@gmail.com" }
 ]
-dependencies = []
+dependencies = [
+    "fastapi>=0.111.0",
+    "bokeh>=3.4.1",
+    "pandas>=2.2.2",
+    "polars>=0.20.31",
+    "duckdb>=1.0.0",
+    "uv>=0.2.8",
+    "passlib>=1.7.4",
+    "predictables @ git+http://github.com/predictables/predictables",
+]
 readme = "README.md"
-requires-python = ">= 3.10"
+requires-python = ">= 3.8"
 license = { text = "MIT" }
 
 [build-system]
@@ -22,4 +31,4 @@ dev-dependencies = []
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/predictables_flask"]
+packages = ["src/api"]
