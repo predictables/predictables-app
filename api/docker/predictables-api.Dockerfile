@@ -29,4 +29,4 @@ EXPOSE 80
 ENV NAME World
 
 # Run main.py when the container launches
-CMD ["/api/.venv/bin/python", "/api/src/api/main.py"]
+CMD ["/api/.venv/bin/fastapi", "/api/src/api/main.py"]
